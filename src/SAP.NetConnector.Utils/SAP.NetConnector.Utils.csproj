@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net40</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <NoBuild>false</NoBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageOutputPath>..\..\build-packages</PackageOutputPath>
+    <AssemblyName>sapnco_utils</AssemblyName>
+    
+    <RootNamespace>SAP.Middleware.Connector</RootNamespace>
+    <PackageId>SAP.NetConnector.Utils</PackageId>
+
+    <Version>3.0.21</Version>
+    <Authors>Contiva</Authors>
+    <Product>SAP .NET Connector nuget Package</Product>
+    <Description></Description>
+    <Company>SAP</Company>
+    <Copyright>Copyright Owner of sapnco: SAP SE</Copyright>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <None Include="..\..\build\net40\SAP.NetConnector.Utils.targets" Pack="true" PackagePath="build\net40\SAP.NetConnector.Utils.targets" />
+    <None Include="..\..\build\net40\SAP.NetConnector.Utils.props" Pack="true" PackagePath="build\net40\SAP.NetConnector.Utils.props" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="$(MSBuildProgramFiles32)\SAP\SAP_DotNetConnector3_Net40_x86\libicudecnumber.dll" Pack="true" PackagePath="runtimes\win7-x86\native\libicudecnumber.dll" />
+    <None Include="$(MSBuildProgramFiles32)\SAP\SAP_DotNetConnector3_Net40_x86\rscp4n.dll" Pack="true" PackagePath="runtimes\win7-x86\native\rscp4n.dll" />
+    <None Include="$(MSBuildProgramFiles32)\SAP\SAP_DotNetConnector3_Net40_x86\sapnco_utils.dll" Pack="true" PackagePath="runtimes\win7-x86\lib\net40\sapnco_utils.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="$(ProgramW6432)\SAP\SAP_DotNetConnector3_Net40_x64\libicudecnumber.dll" Pack="true" PackagePath="runtimes\win7-x64\native\libicudecnumber.dll" />
+    <None Include="$(ProgramW6432)\SAP\SAP_DotNetConnector3_Net40_x64\rscp4n.dll" Pack="true" PackagePath="runtimes\win7-x64\native\rscp4n.dll" />
+    <None Include="$(ProgramW6432)\SAP\SAP_DotNetConnector3_Net40_x64\sapnco_utils.dll" Pack="true" PackagePath="runtimes\win7-x64\lib\net40\sapnco_utils.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="$(OutputPath)sapnco_utils.dll" Pack="true" PackagePath="ref\net40\sapnco_utils.dll" />
+  </ItemGroup>
+
+
+</Project>

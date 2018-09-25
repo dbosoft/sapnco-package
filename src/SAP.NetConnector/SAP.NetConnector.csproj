@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net40</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <NoBuild>false</NoBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageOutputPath>..\..\build-packages</PackageOutputPath>
+    <Version>3.0.21</Version>
+    <Authors>Contiva</Authors>
+    <Product>SAP .NET Connector nuget Package</Product>
+    <Description></Description>
+    <Company>SAP</Company>
+    <Copyright>Copyright Owner of sapnco: SAP SE</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\build\net40\SAP.NetConnector.targets" Pack="true" PackagePath="build\net40\SAP.NetConnector.targets" />
+    <None Include="..\..\build\net40\SAP.NetConnector.props" Pack="true" PackagePath="build\net40\SAP.NetConnector.props" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="$(MSBuildProgramFiles32)\SAP\SAP_DotNetConnector3_Net40_x86\sapnco.dll" Pack="true" PackagePath="runtimes\win7-x86\lib\net40\sapnco.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="$(ProgramW6432)\SAP\SAP_DotNetConnector3_Net40_x64\sapnco.dll" Pack="true" PackagePath="runtimes\win7-x64\lib\net40\sapnco.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="$(OutputPath)sapnco.dll" Pack="true" PackagePath="ref\net40\sapnco.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SAP.NetConnector.Utils\SAP.NetConnector.Utils.csproj" />
+  </ItemGroup>
+
+  <Target Name="MakeAnyCpu" AfterTargets="AfterBuild">
+    <GetFrameworkSdkPath>
+      <Output TaskParameter="Path" PropertyName="SdkPath" />
+    </GetFrameworkSdkPath>
+    <Copy SourceFiles="$(MSBuildProgramFiles32)\SAP\SAP_DotNetConnector3_Net40_x86\sapnco.dll" DestinationFolder="$(OutputPath)" ContinueOnError="true" />
+    <Exec Command="&quot;$(SdkPath)bin\NETFX 4.6.1 Tools\corflags.exe&quot; /nologo /Force /ILONLY+ /32BIT- &quot;$(OutputPath)sapnco.dll&quot;" ContinueOnError="true" IgnoreStandardErrorWarningFormat="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Text="Error while executing corflags" Condition="'$(ErrorCode)' &gt; '0'" />
+  </Target>
+
+</Project>

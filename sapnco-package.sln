@@ -3,9 +3,43 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAP.NetConnector.Utils", "src\SAP.NetConnector.Utils\SAP.NetConnector.Utils.csproj", "{37CE7466-8BC4-4A69-A255-D8B917D5220C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAP.NetConnector", "src\SAP.NetConnector\SAP.NetConnector.csproj", "{E1DD9C40-FB36-4A7A-906F-FD7B793F2D0F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3E26E180-5A6D-4195-8A7C-C5428F03473D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{982DEB91-7C84-4FF6-A885-711737CDC5B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "net40", "net40", "{6B141034-26E2-45DC-A6B9-C406B4306086}"
+	ProjectSection(SolutionItems) = preProject
+		build\net40\SAP.NetConnector.props = build\net40\SAP.NetConnector.props
+		build\net40\SAP.NetConnector.targets = build\net40\SAP.NetConnector.targets
+		build\net40\SAP.NetConnector.Utils.props = build\net40\SAP.NetConnector.Utils.props
+		build\net40\SAP.NetConnector.Utils.targets = build\net40\SAP.NetConnector.Utils.targets
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37CE7466-8BC4-4A69-A255-D8B917D5220C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37CE7466-8BC4-4A69-A255-D8B917D5220C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37CE7466-8BC4-4A69-A255-D8B917D5220C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37CE7466-8BC4-4A69-A255-D8B917D5220C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1DD9C40-FB36-4A7A-906F-FD7B793F2D0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1DD9C40-FB36-4A7A-906F-FD7B793F2D0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1DD9C40-FB36-4A7A-906F-FD7B793F2D0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1DD9C40-FB36-4A7A-906F-FD7B793F2D0F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{982DEB91-7C84-4FF6-A885-711737CDC5B7} = {3E26E180-5A6D-4195-8A7C-C5428F03473D}
+		{6B141034-26E2-45DC-A6B9-C406B4306086} = {982DEB91-7C84-4FF6-A885-711737CDC5B7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {61C9DBBE-830D-4019-B6FE-AD5C5A302C24}
