@@ -3,9 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAP.NetConnector.Utils", "src\SAP.NetConnector.Utils\SAP.NetConnector.Utils.csproj", "{37CE7466-8BC4-4A69-A255-D8B917D5220C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SAP.NetConnector.Utils", "src\SAP.NetConnector.Utils\SAP.NetConnector.Utils.csproj", "{37CE7466-8BC4-4A69-A255-D8B917D5220C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAP.NetConnector", "src\SAP.NetConnector\SAP.NetConnector.csproj", "{E1DD9C40-FB36-4A7A-906F-FD7B793F2D0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SAP.NetConnector", "src\SAP.NetConnector\SAP.NetConnector.csproj", "{E1DD9C40-FB36-4A7A-906F-FD7B793F2D0F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{37CE7466-8BC4-4A69-A255-D8B917D5220C} = {37CE7466-8BC4-4A69-A255-D8B917D5220C}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3E26E180-5A6D-4195-8A7C-C5428F03473D}"
 EndProject

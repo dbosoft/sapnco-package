@@ -38,9 +38,4 @@
     <None Include="$(ProgramW6432)\SAP\SAP_DotNetConnector3_Net40_x64\sapnco_utils.dll" Pack="true" PackagePath="runtimes\win7-x64\lib\net40\sapnco_utils.dll" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include="$(OutputPath)sapnco_utils.dll" Pack="true" PackagePath="ref\net40\sapnco_utils.dll" />
-  </ItemGroup>
-
-
 </Project>
